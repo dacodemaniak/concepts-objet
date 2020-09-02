@@ -99,6 +99,9 @@ module.exports = {
                     {
                         from: 'src/assets/icons',
                         to: 'assets/icons'
+                    },
+                    {
+                        from: 'src/favicon.ico'
                     }
                 ]
             }
