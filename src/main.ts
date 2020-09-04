@@ -1,3 +1,5 @@
+import { Alphabet } from './helpers/alphabet';
+import { RandomHelper } from './helpers/random-helper';
 import { ArrayHelper } from './array-helper';
 
 /**
@@ -11,6 +13,7 @@ import { ArrayHelper } from './array-helper';
  * Import main.scss
  */
 import './scss/main.scss';
+import { FullAlphabet } from './helpers/full-alphabet';
 
 class Main {
     public constructor() {
@@ -25,6 +28,13 @@ class Main {
         const array2: ArrayHelper = new ArrayHelper([2, 4, 6, 8])
         console.log(`Moyenne de array2 : ${array2.avg}`)
         console.log(`Plus petite valeur paire de array2 : ${array2.highest}`)
+
+        // Appeler une méthode statique : NomClasse.methode()
+        console.log(`Nombre entier aléatoire ${RandomHelper.getRandomInteger(10, 25)}`)
+
+        // Affiche les majuscules et minuscules de l'alphabet
+        const alpha: Alphabet = new FullAlphabet()
+        console.log(alpha.toString())
     }
 }
 
