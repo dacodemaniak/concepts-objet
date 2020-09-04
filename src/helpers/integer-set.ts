@@ -1,7 +1,7 @@
 /**
  * Génère un tableau avec des entiers compris entre x et y
  */
-export class IntegerSet {
+export abstract class IntegerSet {
     protected digits: number[] = []
 
     public constructor(from: number, to: number) {
