@@ -1,3 +1,6 @@
+import { DigitIntegerSet } from './helpers/digit-integer-set';
+import { IntegerSet } from './helpers/integer-set';
+import { SpecialChars } from './helpers/special-chars';
 import { Alphabet } from './helpers/alphabet';
 import { RandomHelper } from './helpers/random-helper';
 import { ArrayHelper } from './array-helper';
@@ -35,6 +38,12 @@ class Main {
         // Affiche les majuscules et minuscules de l'alphabet
         const alpha: Alphabet = new FullAlphabet()
         console.log(alpha.toString())
+
+        const specialChars: SpecialChars = new SpecialChars()
+        console.log(specialChars.toString())
+
+        const digits: IntegerSet = new DigitIntegerSet()
+        console.log(digits.toString())
     }
 }
 
