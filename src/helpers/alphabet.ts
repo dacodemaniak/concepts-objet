@@ -22,6 +22,14 @@ export class Alphabet {
         }
     }
 
+    public getMajuscules(): string[] {
+        return this.majuscules
+    }
+
+    public getMinuscules(): string[] {
+        return this.minuscules
+    }
+    
     public toString(): string {
         console.log('Hey i m the boss')
         return this.majuscules.join(',') + ' - ' + this.minuscules.join(',')

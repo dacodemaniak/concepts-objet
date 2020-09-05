@@ -18,6 +18,10 @@ export class SpecialChars {
         }
     }
 
+    public getSpecialChars(): string[] {
+        return this.specialChars
+    }
+
     public toString(): string {
         return this.specialChars.join(' ')
     }

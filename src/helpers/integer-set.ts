@@ -11,6 +11,10 @@ export abstract class IntegerSet {
         }
     }
 
+    public getDigits(): number[] {
+        return this.digits
+    }
+    
     public toString(): string {
         return this.digits.join(' ')
     }
