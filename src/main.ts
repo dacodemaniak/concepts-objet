@@ -1,3 +1,4 @@
+import { Roulette } from './roulette/roulette';
 import { DigitIntegerSet } from './helpers/digit-integer-set';
 import { IntegerSet } from './helpers/integer-set';
 import { SpecialChars } from './helpers/special-chars';
@@ -44,6 +45,9 @@ class Main {
 
         const digits: IntegerSet = new DigitIntegerSet()
         console.log(digits.toString())
+
+        // Load a roulette game
+        new Roulette()
     }
 }
 
