@@ -1,3 +1,4 @@
+import { TextToSpeech } from './../text-to-speech.ts/text-to-speech';
 import { RandomHelper } from './../helpers/random-helper';
 import { RouletteNumbers } from './../helpers/roulette-numbers';
 import { times } from 'lodash';
@@ -9,6 +10,8 @@ export class Roulette {
      *      each key represent one of the number
      *      each value represents an object that store color, and even or odd value of the key 
      */
+    private static tts: TextToSpeech
+
     private static rouletteMap: Map<number, any> = new Map<number, any>()
 
     private static template: any;
@@ -54,6 +57,8 @@ export class Roulette {
 
     public constructor() {
         
+        // Sets a TTS Object
+        Roulette.tts = new TextToSpeech()
 
         // Sets the desk config
         Roulette.setRouletteDesk()
@@ -95,6 +100,9 @@ export class Roulette {
         Roulette.spinTimeTotal = Math.random() * 3 + 4 * 1000
 
         Roulette.button.textContent = 'Rien ne va plus...'
+        
+        Roulette.tts.say('Rien ne vas plus')
+
         Roulette.button.setAttribute('disabled', 'disabled')
 
         Roulette.rotateRoulette()
@@ -134,8 +142,6 @@ export class Roulette {
         Roulette.context.font = 'bold 30px Arial,Helvetica'
 
         const text: string = Roulette.desk[index].toString()
-        
-        console.log(`${text} from index : ${index}`)
         
         Roulette.context.fillText(
             text,
