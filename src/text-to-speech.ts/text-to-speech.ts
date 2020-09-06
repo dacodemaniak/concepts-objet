@@ -15,7 +15,7 @@ export class TextToSpeech {
             this.setLocalVoice().then((voices: SpeechSynthesisVoice[]) => {
                 const navigatorLanguage: string = window.navigator.language
                 const userLanguage: string = navigatorLanguage.split('-')[0]
-                
+
                 this.voice = voices.reduce((voice) => 
                     voice.default && voice.lang.substr(0, 2) == userLanguage ? voice : voices[0]
                 )
@@ -24,9 +24,6 @@ export class TextToSpeech {
                 this.utterance.pitch = .8
                 this.utterance.rate = .9 
             })
-
-
-            
         }
     }
 

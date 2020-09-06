@@ -151,6 +151,23 @@ export class Roulette {
 
         Roulette.context.restore()
 
+        let voiceResult: string
+        const resultOptions: any = Roulette.rouletteMap.get(Roulette.desk[index])
+        if (index !== 0) {
+            voiceResult = Roulette.desk[index].toString()
+            if (this.reds.indexOf(Roulette.desk[index]) !== -1) {
+                voiceResult += ' rouge'
+            } else {
+                voiceResult += ' noir'
+            }
+            voiceResult +=  + resultOptions.odd ? ' pair' : ' impair'
+            if (Roulette.desk[index] >= 19) {
+                voiceResult += ' et passe'
+            } else {
+                voiceResult += ' et manque'
+            }
+            Roulette.tts.say(voiceResult)
+        }
         Roulette.button.textContent = 'Lancer'
         Roulette.button.removeAttribute('disabled')
     }
