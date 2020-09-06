@@ -78,8 +78,9 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             hash: false,
-            inject: true,
-            template: 'src/index.html',
+            inject: false,
+            template: './src/index.html',
+            filename: 'index.html',
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -88,14 +89,15 @@ module.exports = {
                 removeEmptyAttributes: true,
                 removeStyleLinkTypeAttributes: true,
                 keepClosingSlash: true,
-                minifyJS: true,
-                minifyCSS: true,
-                minifyURLs: true,
-            },
+            }
         }),
         new CopyWebpackPlugin(
             {
                 patterns: [
+                    {
+                        from: 'src/roulette/roulette.html',
+                        to: 'templates/roulette.html'
+                    },
                     {
                         from: 'src/assets/icons',
                         to: 'assets/icons'
