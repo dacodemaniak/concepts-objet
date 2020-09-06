@@ -1,7 +1,5 @@
 import { TextToSpeech } from './../text-to-speech.ts/text-to-speech';
-import { RandomHelper } from './../helpers/random-helper';
-import { RouletteNumbers } from './../helpers/roulette-numbers';
-import { times } from 'lodash';
+
 
 export class Roulette {
     /**
